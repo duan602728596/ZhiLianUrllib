@@ -41,7 +41,9 @@ const callback = (text)=>{
     });
 };
 
-pyhttp(info(encodeURI('http://sou.zhaopin.com/jobs/searchresult.ashx?jl=北京&kw=web前端&sm=0&sf=10001&st=15000&el=4&we=0103&isfilter=1&p=1&et=2')), function(text){
+pyhttp(info(encodeURI('http://sou.zhaopin.com/jobs/searchresult.ashx?' + 
+                      'jl=北京&kw=web前端&sm=0&sf=10001&st=15000&el=4&we=0103&isfilter=1&p=1&et=2')), function(text){
+    
     const p0 = deal(text, true);
     _result.list = p0.list;
 
