@@ -1,7 +1,6 @@
 
 /**
  * 与python脚本通信，进行一个请求
- * @return {text}：返回一个网页
  */
 
 const childProcess = require('child_process');
