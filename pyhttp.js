@@ -1,6 +1,8 @@
 
 /**
  * 与python脚本通信，进行一个请求
+ * @param info{object}：与python脚本通信的配置
+ * @param callback{function}：通信完成后执行的事件，传递参数为返回的数据 
  */
 
 const childProcess = require('child_process');
