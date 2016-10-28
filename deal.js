@@ -2,7 +2,7 @@
 /**
  * 处理数据
  * @param dealText{string}：获取到的页面源代码
- * @param ishref{boolean}：是否获取下一页的地址，默认为false，不获取 
+ * @param ishref{boolean}：是否获取下一页的地址，默认为false，不获取
  */
 
 const cheerio = require('cheerio');
@@ -11,8 +11,10 @@ const cheerio = require('cheerio');
 /* 提取冒号后面的文本 */
 const mhtext = text => text.replace(/.+：/, '');
 
-function each($, $table, ishref = false){
+function each($, ishref = false){
     const a = [];
+    // 获取table
+    const $table = $('#newlist_list_content_table').children('table');
     for(let i = 0, j = $table.length; i < j; i++){
         const $this = $table.eq(i);
         const $tr = $this.children('tr'),
@@ -55,9 +57,8 @@ function deal(dealText, ishref = false){
         decodeEntities: false
     });
 
-    // 获取table
-    const $table = $('#newlist_list_content_table').children('table');
-    return each($, $table, ishref);
+
+    return each($, ishref);
 }
 
 module.exports = deal;
