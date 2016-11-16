@@ -34,6 +34,8 @@ const info = (url, method = 'get', data = '')=>{
     }
 };
 
+const page = 6; // 循环次数
+
 // 回调
 const callback = (text)=>{
     return new Promise((resolve, reject)=>{
@@ -48,7 +50,7 @@ pyhttp(info(encodeURI('http://sou.zhaopin.com/jobs/searchresult.ashx?' +
     _result.list = p0.list;
 
     const n = [];
-    for(let i = 0; i < 50; i++){
+    for(let i = 0; i < page; i++){
         n.push(pyhttp(info(`${p0.href}&p=${i + 2}`)), callback);
     }
 
