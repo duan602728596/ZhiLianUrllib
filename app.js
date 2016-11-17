@@ -35,6 +35,8 @@ const info = (url, method = 'get', data = '')=>{
 };
 
 const page = 6; // 循环次数
+const zlUrl = encodeURI('http://sou.zhaopin.com/jobs/searchresult.ashx?' + 
+                        'jl=北京&kw=web前端&sm=0&sf=10001&st=15000&el=4&we=0103&isfilter=1&p=1&et=2');
 
 // 回调
 const callback = (text)=>{
@@ -43,8 +45,7 @@ const callback = (text)=>{
     });
 };
 
-pyhttp(info(encodeURI('http://sou.zhaopin.com/jobs/searchresult.ashx?' + 
-                      'jl=北京&kw=web前端&sm=0&sf=10001&st=15000&el=4&we=0103&isfilter=1&p=1&et=2')), function(text){
+pyhttp(info(zlUrl), function(text){
     
     const p0 = deal(text, true);
     _result.list = p0.list;
