@@ -1,8 +1,8 @@
 
 /**
  * 处理数据
- * @param dealText{string}：获取到的页面源代码
- * @param ishref{boolean}：是否获取下一页的地址，默认为false，不获取
+ * @param {string} dealText：获取到的页面源代码
+ * @param {boolean} ishref：是否获取下一页的地址，默认为false，不获取
  */
 
 const cheerio = require('cheerio');
