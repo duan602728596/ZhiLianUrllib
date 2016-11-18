@@ -8,10 +8,10 @@ import urllib2
 
 
 # 获取传递的参数
-# @param argv[0]{string}：脚本名称
-# @param argv[1]{string}：请求方式，get或post
-# @param argv[2]{string}：请求地址
-# @param argv[3]{string}：请求的数据
+# @param {string} argv[0]：脚本名称
+# @param {string} argv[1]：请求方式，get或post
+# @param {string} argv[2]：请求地址
+# @param {string} argv[3]：请求的数据
 argv = {
     'filename': sys.argv[0],
     'method': sys.argv[1],
